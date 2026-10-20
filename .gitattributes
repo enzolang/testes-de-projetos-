@@ -1,0 +1,4 @@
+# Scripts do Windows ficam com CRLF (e o .ps1 com BOM UTF-8) do jeito que estão no repositório,
+# para funcionarem igual baixando pelo ZIP ou pelo "Raw" do GitHub.
+*.ps1 -text
+*.bat -text
