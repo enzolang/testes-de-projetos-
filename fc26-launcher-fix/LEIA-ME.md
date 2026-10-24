@@ -90,6 +90,35 @@ Siga na ordem:
    - Reinstale o mod do FIFA Mania se o jogo atualizou depois que você
      instalou o mod.
 
+## "Acesso negado", como se o jogo fosse de outra conta
+
+Veja onde a mensagem aparece:
+
+- **No EA app (fala de conta EA ou Steam)**: a sua Steam está ligada a uma
+  conta EA diferente da que você usa no EA app. Isso acontece sem perceber:
+  uma conta antiga com outro e-mail, uma conta criada sem querer na primeira
+  vez que abriu um jogo da EA pela Steam, ou alguém que usou a sua Steam.
+  1. Entre em ea.com com a sua conta > Configurações da conta > *Conexões*.
+     Se a Steam **não** aparece lá, ela está ligada a outra conta EA.
+  2. Para achar essa outra conta: se a tela de login da EA tiver a opção de
+     entrar com a Steam, use; ela entra direto na conta ligada. Se não,
+     tente os outros e-mails que você já usou (ou login pelo Google ou
+     Facebook).
+  3. Achou: o mais simples é entrar no EA app com essa conta. Se quiser
+     trocar, dá para desligar a Steam dela em *Conexões* e ligar na sua
+     conta principal, mas depois disso só dá para trocar de novo em 6 meses,
+     e recompensas e itens ficam na conta antiga.
+  4. Não achou ou não tem acesso: só o suporte da EA resolve
+     (help.ea.com/contact-us). Leve o comprovante de compra da Steam.
+  5. Se você não reconhece nenhuma conta, troque a senha da Steam e ative o
+     Steam Guard: há relatos de contas Steam invadidas e ligadas à conta EA
+     de outra pessoa.
+- **Numa janela do Windows "Acesso negado"** (ao abrir o jogo ou a pasta,
+  principalmente depois de criar outro usuário no Windows): o seu usuário
+  não tem permissão na pasta do jogo. Clique com o botão direito na pasta da
+  biblioteca da Steam > Propriedades > *Segurança* > *Editar* > *Adicionar*,
+  digite o seu nome de usuário do Windows, marque *Controle total* e aplique.
+
 ## "Jogo não instalado", mas está instalado
 
 - **Comprou na Steam**: abra a Steam antes de tudo. A cópia da Steam abre
