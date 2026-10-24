@@ -3,20 +3,22 @@ setlocal
 title FC 26 com mod - inicializador
 
 rem ============================================================
-rem  CONFIGURE AQUI: o programa que voce usa para abrir o jogo
-rem  com o mod (FIFA Mod Manager, launcher do FCM, etc).
+rem  CONFIGURE AQUI
+rem
+rem  MOD_LAUNCHER: o programa que voce usa para abrir o jogo com
+rem  o mod (FIFA Mod Manager, launcher do FCM, etc).
 rem  Dica: botao direito no atalho > "Abrir local do arquivo".
+rem
+rem  LOJA: onde voce comprou o jogo, STEAM ou EA.
 rem ============================================================
 set "MOD_LAUNCHER=C:\CAMINHO\PARA\ModManager.exe"
+set "LOJA=STEAM"
+
+rem Rode este arquivo normalmente (duplo clique), NAO como
+rem administrador: a Steam, o EA app e o jogo precisam rodar
+rem no mesmo nivel para passar a licenca de um para o outro.
 
 set "EA_APP=%ProgramFiles%\Electronic Arts\EA Desktop\EA Desktop\EADesktop.exe"
-
-net session >nul 2>&1
-if errorlevel 1 (
-    echo AVISO: rode este arquivo como administrador
-    echo        ^(botao direito ^> Executar como administrador^).
-    echo.
-)
 
 echo [1/4] Fechando o jogo e o EA app que ficaram travados...
 for %%P in (FC26.exe EADesktop.exe) do (
@@ -26,14 +28,26 @@ timeout /t 3 /nobreak >nul
 
 echo.
 choice /C SN /M "[2/4] Quer limpar o cache do EA app? (recomendado se ele trava em Preparando jogo)"
-if errorlevel 2 goto :abrir_ea
+if errorlevel 2 goto :abrir_loja
 echo.
 echo   Abra: Iniciar ^> Todos os aplicativos ^> pasta EA ^> App Recovery ^> Limpar cache.
 echo   Quando terminar, volte aqui.
 pause
 
-:abrir_ea
+:abrir_loja
 echo.
+if /I "%LOJA%"=="EA" goto :abrir_ea
+
+echo [3/4] Abrindo a Steam...
+start "" "steam://open/main"
+echo.
+echo   Espere a Steam abrir e estar logada.
+echo   NAO abra o EA app: a Steam abre ele sozinha quando o jogo iniciar.
+echo   Se o EA app pedir login, use a conta EA ligada a sua Steam.
+pause
+goto :abrir_mod
+
+:abrir_ea
 echo [3/4] Abrindo o EA app...
 if not exist "%EA_APP%" goto :sem_ea
 start "" "%EA_APP%"
@@ -50,6 +64,7 @@ echo   Espere o EA app abrir por completo e fazer login.
 echo   NAO clique em Jogar no EA app, o jogo vai abrir pelo mod.
 pause
 
+:abrir_mod
 echo.
 echo [4/4] Abrindo o jogo com o mod...
 if not exist "%MOD_LAUNCHER%" goto :sem_mod
