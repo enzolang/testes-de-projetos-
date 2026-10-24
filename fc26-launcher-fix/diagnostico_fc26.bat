@@ -55,5 +55,14 @@ echo.
 echo --- Programas do EA e do jogo abertos agora ---
 tasklist | findstr /I /B "EA FC2"
 echo.
+
+echo --- Servicos do EA ---
+sc query EABackgroundService
+sc query EAAntiCheatService
+echo.
+
+echo --- Ultimos erros de programas no Windows ---
+wevtutil qe Application /q:"*[System[(Level=1 or Level=2)]]" /c:15 /rd:true /f:text
+echo.
 echo ===== Fim =====
 exit /b 0

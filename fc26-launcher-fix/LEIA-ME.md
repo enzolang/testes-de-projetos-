@@ -35,7 +35,8 @@ O script:
 
 Se aparecer "jogo não instalado" ou "ocorreu um erro, reinicie", rode o
 `diagnostico_fc26.bat`. Ele não muda nada no PC, só procura onde o FC 26 está
-instalado e o que o Windows registrou sobre ele. No fim ele abre o
+instalado, o que o Windows registrou sobre ele, se os serviços do EA estão
+rodando e os últimos erros de programas do Windows. No fim ele abre o
 `diagnostico_fc26.txt` no Bloco de Notas, para você copiar e mandar.
 
 O relatório mostra o nome da sua pasta de usuário do Windows. Se não quiser
@@ -55,15 +56,32 @@ Siga na ordem:
    - **Abriu sem mod**: a Steam e o EA app estão bons, o problema é o jeito
      que o mod abre o jogo. Vá para o passo 3.
    - **Não abriu nem sem mod**: vá para o passo 2.
-2. **Conta e EA app** (o jogo não abre nem sem mod):
-   - No EA app, saia da conta (*Sair*) e entre de novo com a conta EA que
-     está ligada à sua Steam. Se você tem duas contas EA, esse costuma ser o
-     problema.
-   - Reinicie o PC, limpe o cache do EA app (App Recovery) e repare ou
-     reinstale o EA Javelin Anticheat.
-   - Se ainda não abrir, só o suporte da EA consegue resolver: abra um
-     chamado em help.ea.com e informe que é a versão da Steam e a mensagem
-     exata do erro.
+2. **Conta, EA app e Windows** (o jogo não abre nem sem mod). Teste depois
+   de cada item:
+   1. **Relógio do PC**: data, hora e fuso precisam estar certos (Configurações
+      > Hora e idioma > *Definir hora automaticamente*). Com o relógio errado
+      a licença falha.
+   2. **Conta ligada**: entre em myaccount.ea.com > *Conexões* e veja se a
+      sua Steam aparece ligada. No EA app, saia da conta e abra o jogo pela
+      Steam: ele vai pedir login, entre com essa mesma conta. Se você tem duas
+      contas EA, esse costuma ser o problema.
+   3. **Mesmo nível**: a Steam não pode estar marcada para rodar como
+      administrador (botão direito no atalho da Steam > Propriedades >
+      Compatibilidade: desmarque *Executar como administrador*).
+   4. **Antivírus e firewall**: libere o EA app, a pasta do jogo e o EA
+      Javelin Anticheat no antivírus e no firewall. Se usa VPN, desligue.
+   5. **Reinstalar o EA app e o anticheat**: em Configurações > Aplicativos,
+      desinstale o *EA app* e o *EA Javelin Anticheat*. Reinicie o PC, baixe
+      o EA app de novo em ea.com, depois verifique a integridade do FC 26 na
+      Steam e abra pela Steam.
+   6. **Usuário novo do Windows**: um jogador resolveu criando outro usuário
+      local administrador no Windows, dando *Controle total* da pasta da
+      biblioteca da Steam para esse usuário e abrindo o jogo pela Steam
+      nele. Pode falhar 2 ou 3 vezes antes de abrir.
+   7. **Suporte da EA**: a EA diz que é um problema conhecido e que está
+      investigando. Abra um chamado em help.ea.com, diga que é a versão da
+      Steam e mande a mensagem exata e o relatório do
+      `diagnostico_fc26.bat`.
 3. **Mod** (o jogo abre sem mod, mas não com mod):
    - Desde a atualização 1.3.0 do FC 26, o FIFA Mod Manager sozinho não
      consegue abrir o jogo. Instale o FC 26 Live Editor (versão 26.2.0 ou
