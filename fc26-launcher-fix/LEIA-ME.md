@@ -22,10 +22,43 @@ sozinho ou volta para o EA app).
 
 O script:
 
-1. fecha o FC 26 e o EA app se estiverem travados;
+1. fecha o FC 26 e o EA app se estiverem travados (sem mexer nos serviços de fundo do EA);
 2. pergunta se você quer limpar o cache do EA app e mostra onde fica;
 3. abre o EA app e espera você fazer login;
 4. abre o jogo pelo programa do mod.
+
+## Diagnóstico: `diagnostico_fc26.bat`
+
+Se aparecer "jogo não instalado" ou "ocorreu um erro, reinicie", rode o
+`diagnostico_fc26.bat`. Ele não muda nada no PC, só procura onde o FC 26 está
+instalado e o que o Windows registrou sobre ele. No fim ele abre o
+`diagnostico_fc26.txt` no Bloco de Notas, para você copiar e mandar.
+
+O relatório mostra o nome da sua pasta de usuário do Windows. Se não quiser
+mostrar, troque o nome antes de mandar.
+
+## "Jogo não instalado", mas está instalado
+
+- **Comprou na Steam**: abra a Steam antes de tudo. A cópia da Steam abre
+  pela Steam, e o EA app sozinho pode achar que o jogo não está instalado.
+  Na Steam, use *Verificar integridade dos arquivos*.
+- **Comprou no EA app e o jogo está em outra pasta ou outro disco**: o EA app
+  só procura na pasta onde ele instala. Nas configurações de download do EA
+  app, coloque como local de instalação a pasta que tem a pasta
+  `EA SPORTS FC 26` dentro. Depois clique em *Instalar*: ele confere os
+  arquivos que já existem em vez de baixar tudo de novo.
+- **Quem reclama é o programa do mod**: esses programas descobrem onde o jogo
+  está pelo registro do Windows. Rode *Reparar* no EA app (ou *Verificar
+  integridade* na Steam) e tente de novo. Se o programa tiver opção de
+  escolher a pasta do jogo, aponte para a pasta que o diagnóstico mostrou.
+
+## "Ocorreu um erro, reinicie"
+
+- Reinicie o PC de verdade, não só o EA app. O anticheat (EA Javelin) instala
+  um driver que só funciona depois de reiniciar.
+- Depois abra o EA app como administrador e limpe o cache (App Recovery).
+- Se continuar, repare ou reinstale o EA Javelin Anticheat e rode *Reparar*
+  no FC 26.
 
 ## Se ainda não funcionar
 

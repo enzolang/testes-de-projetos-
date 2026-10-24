@@ -19,7 +19,7 @@ if errorlevel 1 (
 )
 
 echo [1/4] Fechando o jogo e o EA app que ficaram travados...
-for %%P in (FC26.exe EADesktop.exe EABackgroundService.exe EALocalHostSvc.exe) do (
+for %%P in (FC26.exe EADesktop.exe) do (
     taskkill /F /IM %%P >nul 2>&1
 )
 timeout /t 3 /nobreak >nul
