@@ -1,0 +1,2 @@
+# guarda o .bat com CRLF no repositorio, para funcionar baixando direto do GitHub
+*.bat -text
